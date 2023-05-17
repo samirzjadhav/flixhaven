@@ -142,6 +142,16 @@ body {
   outline-color: var(--primary-variant);
 }
 
+::-webkit-scrollbar {
+  width: 80px;
+  height: 80px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--banner-background);
+  border-radius: var(--radius-8);
+}
+
 /* 
   #REUSED STYLE
  */
