@@ -160,10 +160,6 @@ body {
   #HEADER 
 */
 
-.search-box {
-  display: none;
-}
-
 .header {
   position: relative;
   padding-block: 24px;
@@ -197,6 +193,33 @@ body {
 
 .search-btn:is(:hover, :focus-visible) {
   opacity: 1;
+}
+
+.menu-btn.active .menu,
+.menu-btn .close {
+  display: none;
+}
+.menu-btn .menu,
+.menu-btn.active .close {
+  display: block;
+}
+
+.search-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  padding: 24px 16px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.search-box.active {
+  display: flex;
 }
 
 /* 
