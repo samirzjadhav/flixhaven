@@ -276,6 +276,20 @@ body {
   box-shadow: 0 0 0 2px var(--on-surface);
   padding-inline-start: 16px;
 }
+
+.search-wrapper .landing-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  left: 12px;
+  opacity: 0.5;
+  transition: var(--transition-short);
+}
+
+.search-wrapper:focus-within .loading-icon {
+  opacity: 0;
+}
+
 /* 
   #SIDEBAR
  */
