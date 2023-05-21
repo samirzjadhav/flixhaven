@@ -277,16 +277,16 @@ body {
   padding-inline-start: 16px;
 }
 
-.search-wrapper .landing-icon {
+.search-wrapper .leading-icon {
   position: absolute;
-  top: 50%;
+  top: 25%;
   transform: translateX(-50%);
-  left: 12px;
+  left: 20px;
   opacity: 0.5;
   transition: var(--transition-short);
 }
 
-.search-wrapper:focus-within .loading-icon {
+.search-wrapper:focus-within .leading-icon {
   opacity: 0;
 }
 
