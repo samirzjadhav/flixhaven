@@ -199,6 +199,14 @@ body {
 
 .header .logo {
   margin-inline-end: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header .logo-img {
+  width: 40px;
+  height: 40px;
+  transform: translateX(20px);
 }
 
 .search-btn,
