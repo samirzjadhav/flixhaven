@@ -183,6 +183,16 @@ body {
   }
 }
 
+.search-wrapper.searching::before {
+  display: block;
+}
+
+.title {
+  font-size: var(--fs-title);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.5px;
+}
+
 /* 
   #HEADER 
 */
