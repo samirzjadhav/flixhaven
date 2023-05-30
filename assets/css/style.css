@@ -346,7 +346,47 @@ body {
 }
 
 .sidebar::-webkit-scrollbar-button {
+  height: 16px;
+}
+
+.sidebar-list {
   padding-inline: 36px;
+}
+
+.sidebar-link {
+  color: var(--on-surface-variant);
+  transition: var(--transition-short);
+}
+
+.sidebar-link:is(:hover, :focus-visible) {
+  color: var(--on-background);
+}
+
+.sidebar-list {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-list .title {
+  margin-block-end: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--background);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-short);
+  z-index: 3;
+}
+
+.overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
 }
 
 /* 
