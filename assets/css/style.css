@@ -193,6 +193,49 @@ body {
   letter-spacing: 0.5px;
 }
 
+.heading,
+.title,
+.title-large {
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.5px;
+}
+
+.heading {
+  color: var(--white);
+  font-size: var(--fs-heading);
+  line-height: 1.2;
+}
+
+.title-large {
+  font-size: var(--fs-title-lg);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn {
+  color: var(--white);
+  font-size: var(--fs-button);
+  font-weight: var(--weight-bold);
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 12px;
+  padding-inline: 20px 24px;
+  border-radius: var(--radius-8);
+  transition: var(--transition-short);
+}
+
 /* 
   #HEADER 
 */
