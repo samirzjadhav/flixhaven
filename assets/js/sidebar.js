@@ -62,4 +62,22 @@ export function sidebar() {
     sidebar.appendChild(sidebarInner);
     toggleSidebar(sidebar);
   };
+  const toggleSidebar = function (sidebar) {
+    // Toggle sidebar in Mobile screen
+    const sidebarBtn = document.querySelector("[menu-btn]");
+    const sidebarTogglers = document.querySelectorAll("[menu-toggler]");
+    const sidebarClose = document.querySelectorAll("[menu-close]");
+    const overlay = document.querySelector("[overlay]");
+    addEventOnElement(sidebarTogglers, "click", function () {
+      sidebar.classList.toggle("active");
+      sidebarBtn.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    addEventOnElement(sidebarClose, "click", function () {
+      sidebar.classList.remove("active");
+      sidebarBtn.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  };
 }
