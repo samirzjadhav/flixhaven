@@ -9,10 +9,10 @@ const imageBaseURL = "https://image.tmdb.org/t/p/";
  * along with an optional parameter if has 'optionalparam'.
  */
 
-const fetchDataFromServer = function (url, callback, optionalparam) {
+const fetchDataFromServer = function (url, callback, optionalParam) {
   fetch(url)
     .then((response) => response.json())
-    .then((data) => callback(data, optionalparam));
+    .then((data) => callback(data, optionalParam));
 };
 
-export { imageBaseURl, api_key, fetchDataFromServer };
+export { imageBaseURL, api_key, fetchDataFromServer };
