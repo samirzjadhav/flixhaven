@@ -11,7 +11,7 @@ sidebar();
 const genreList = {
   asString(gerneIdList) {
     let newGenreList = [];
-    for (const gerneId of gerneIdList) {
+    for (const genreId of gerneIdList) {
       this[genreId] && newGenreList.push(this[genreId]);
     }
     return newGenreList.join(", ");
@@ -26,7 +26,7 @@ fetchDataFromServer(
     }
     fetchDataFromServer(
       `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=1`,
-      heroBannner
+      heroBanner
     );
   }
 );
@@ -39,17 +39,7 @@ const heroBanner = function ({ results: movieList }) {
   banner.innerHTML = `
     <div class="banner-slider"></div>
     <div class="slider-control">
-      <div class="control-inner">
-        <button class="poster-box slider-item">
-          <img
-            src="./assets/images/slider-control.jpg"
-            alt="Slide to Puss in Boots: The Last Wish"
-            loading="lazy"
-            draggable="false"
-            class="img-cover"
-          />
-        </button>
-      </div>
+      <div class="control-inner"></div>
     </div>
   `;
 
@@ -106,5 +96,16 @@ const heroBanner = function ({ results: movieList }) {
     controlItem.setAttribute("slider-control", `${controlItemIndex}`);
 
     controlItemIndex++;
+
+    controlItem.innerHTML = ` <img
+      src="${imageBaseURL}w154${poster_path}"
+      alt="Slide to ${title}"
+      loading="lazy"
+      draggable="false"
+      class="img-cover"
+    />`;
+    banner.querySelector(".control-inner").appendChild(controlItem);
   }
+
+  pageContent.appendChild(banner);
 };
