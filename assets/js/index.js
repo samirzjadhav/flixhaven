@@ -3,10 +3,27 @@
 //  import all components and functions
 import { sidebar } from "./sidebar.js";
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
+import { createMovieCard } from "./movie-card.js";
 
 const pageContent = document.querySelector("[page-content]");
 
 sidebar();
+
+// Home page sections (Top Rated, Upcomming, Trending Movies)
+const homePageSection = [
+  {
+    title: "Upcoming Movies",
+    path: "/movie/upcoming",
+  },
+  {
+    title: "Today's Trending Movies",
+    path: "/trending/movie/week",
+  },
+  {
+    title: "Top Rated Movies",
+    path: "/movie/top_rated",
+  },
+];
 
 const genreList = {
   asString(gerneIdList) {
@@ -110,6 +127,15 @@ const heroBanner = function ({ results: movieList }) {
   pageContent.appendChild(banner);
 
   addHeroSlide();
+
+  // Fetch data for home page section (Top Rated, Trending, upcomming )
+  for (const { title, path } of homePageSection) {
+    fetchDataFromServer(
+      `https://api.themoviedb.org/3/${path}?api_key=${api_key}&page=1`,
+      createMovieList,
+      title
+    );
+  }
 };
 
 // Hero slider functionality
@@ -137,4 +163,49 @@ const addHeroSlide = function () {
   };
 
   addEventOnElements(sliderControls, "click", sliderStart);
+};
+
+const createMovieList = function ({ results: movieList }, title) {
+  const movieListElem = document.createElement("section");
+  movieListElem.classList.add("movie-list");
+  movieListElem.ariaLabel = `${title}`;
+
+  movieListElem.innerHTML = html`
+    <div class="title-wrapper">
+      <h3 class="title-large">Upcomming Movies</h3>
+    </div>
+    <div class="slider-list">
+      <div class="slider-inner">
+        <div class="movie-card">
+          <figure class="poster-box card-banner">
+            <img src="./assets/images/slider-control.jpg" alt="Puss in Boots:
+            The Last Wish "" class="img-cover" />
+          </figure>
+          <h4 class="title">Puss in Boots: The Last Wish</h4>
+          <div class="meta-list">
+            <div class="meta-item">
+              <img
+                src="./assets/images/star.png"
+                width="20"
+                height="20"
+                alt="rating"
+              />
+              <span class="span">8.4</span>
+            </div>
+            <div class="card-badge">2022</div>
+          </div>
+          <a
+            href="./detail.html"
+            class="card-btn"
+            title="Puss in Boots: The Last Wish"
+          ></a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  for (const movie of movieList) {
+    const movieCard = createMovieCard(movie);
+    // called from movie_card.js
+  }
 };
