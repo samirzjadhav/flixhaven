@@ -170,9 +170,9 @@ const createMovieList = function ({ results: movieList }, title) {
   movieListElem.classList.add("movie-list");
   movieListElem.ariaLabel = `${title}`;
 
-  movieListElem.innerHTML = html`
+  movieListElem.innerHTML = `
     <div class="title-wrapper">
-      <h3 class="title-large">Upcomming Movies</h3>
+      <h3 class="title-large">${title}</h3>
     </div>
     <div class="slider-list">
       <div class="slider-inner"></div>
@@ -181,6 +181,10 @@ const createMovieList = function ({ results: movieList }, title) {
 
   for (const movie of movieList) {
     const movieCard = createMovieCard(movie);
+    console.log(movieCard);
     // called from movie_card.js
+    movieListElem.querySelector(".slider-inner").appendChild(movieCard);
   }
+
+  pageContent.appendChild(movieListElem);
 };

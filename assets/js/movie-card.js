@@ -10,7 +10,7 @@ export function createMovieCard(movie) {
   const card = document.createElement("div");
   card.classList.add("movie-card");
 
-  card.innerhtml = html`
+  card.innerHTML = `
     <figure class="poster-box card-banner">
       <img src="${imageBaseURL}w342${poster_path}" alt="${title}""
       class="img-cover" />
