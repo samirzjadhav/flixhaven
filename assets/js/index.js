@@ -16,7 +16,7 @@ const homePageSection = [
     path: "/movie/upcoming",
   },
   {
-    title: "Today's Trending Movies",
+    title: "Weekly Trending Movies",
     path: "/trending/movie/week",
   },
   {
@@ -93,7 +93,7 @@ const heroBanner = function ({ results: movieList }) {
         </div>
         <p class="genre">${genreList.asString(genre_ids)}</p>
         <p class="banner-text">${overview}</p>
-        <a href="./detail.html" class="btn">
+        <a href="./detail.html" class="btn"  onclick="getMovieDetail(${id})>
           <img
             src="./assets/images/play_circle.png"
             alt="play circle"
@@ -181,7 +181,6 @@ const createMovieList = function ({ results: movieList }, title) {
 
   for (const movie of movieList) {
     const movieCard = createMovieCard(movie);
-    console.log(movieCard);
     // called from movie_card.js
     movieListElem.querySelector(".slider-inner").appendChild(movieCard);
   }
