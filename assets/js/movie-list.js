@@ -6,6 +6,7 @@ import { createMovieCard } from "./movie-card.js";
 
 const genreName = window.localStorage.getItem("genreNmae");
 const pageContent = document.querySelector("[page-content]");
+const urlParam = window.localStorage.getItem("urlParam");
 
 sidebar();
 
