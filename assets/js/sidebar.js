@@ -23,13 +23,13 @@ export function sidebar() {
  
     <div class="sidebar-list">
       <p class="title">Language</p>
-      <a href="./movie-list.html" menu-close class="sidebar-link">English</a>
+      <a href="./movie-list.html" menu-close class="sidebar-link" onclick="getMovieList('with_original_language=en','English')">English</a>
 
-      <a href="./movie-list.html" menu-close class="sidebar-link">Bengali</a>
+      <a href="./movie-list.html" menu-close class="sidebar-link" onclick="getMovieList('with_original_language=bn','English'>Bengali</a>
 
-      <a href="./movie-list.html" menu-close class="sidebar-link">Hindi</a>
+      <a href="./movie-list.html" menu-close class="sidebar-link" onclick="getMovieList('with_original_language=hi','English'>Hindi</a>
 
-      <a href="./movie-list.html" menu-close class="sidebar-link">Marathi</a>
+      <a href="./movie-list.html" menu-close class="sidebar-link" onclick="getMovieList('with_original_language=ma','English'>Marathi</a>
     </div>
   `;
 
