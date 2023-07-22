@@ -1,5 +1,3 @@
-"use strict";
-
 import { api_key, fetchDataFromServer } from "./api.js";
 
 export function sidebar() {
