@@ -3,6 +3,7 @@
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
 import { sidebar } from "./sidebar.js";
 import { createMovieCard } from "./movie-card.js";
+import { search } from "./search.js";
 
 // collection genre name & url paprameter from local storage
 const genreName = window.localStorage.getItem("genreNmae");
@@ -86,3 +87,5 @@ fetchDataFromServer(
       });
   }
 );
+
+search();
